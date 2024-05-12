@@ -1,0 +1,47 @@
+public class Calculator {
+    public Integer a { get; set; }
+    public Integer b { get; set; }
+    
+     public Calculator(Integer aValue, Integer bValue) {
+        a = aValue;
+        b = bValue;
+    }
+    
+    public void add() {
+        Integer result = a + b;
+        System.debug('Addition is: ' + result);
+    }
+    
+    public void sub() {
+        Integer result = a - b;
+        System.debug('Subtraction is: ' + result);
+    }
+    
+    public void mult() {
+        Integer result = a * b;
+        System.debug('Multiplication is: ' + result);
+    }
+    
+    public void div() {
+        if (b != 0) {
+            Decimal result = (Decimal)a / (Decimal)b;
+            System.debug('Division is: ' + result);
+        } else {
+            System.debug('Division by zero error');
+        }
+    }
+    
+    public void power() {
+        Double result = Math.pow(a, b);
+        System.debug('Power is: ' + result);
+    }
+    
+    public void modulo() {
+        Integer result = Math.mod(a, b);
+        System.debug('Modulo is: ' + result);
+    }
+}
+
+
+Calculator c=new Calculator(400,200);
+c.div();

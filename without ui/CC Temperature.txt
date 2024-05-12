@@ -1,0 +1,58 @@
+public class Assignmnet_11 {
+	public Integer unit {get;set;}
+    public Integer result {get;set;}
+    public Double celsius {get;set;}
+    public Double fahrenheit {get;set;}
+    
+    public pagereference convert() {
+        fahrenheit = (celsius * 9/5) + 32;
+        return null;
+    }
+    public pagereference calculate() {
+        result = unit*10;
+        return null;
+    }
+}
+
+<apex:page controller="Assignmnet_11" sidebar="false" >
+    <apex:form >
+        <apex:pageBlock title="Electricity bill Calculator">
+            <apex:pageBlockSection columns="1" title="" collapsible="false">          
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Enter the number of units </apex:outputLabel>
+                <apex:inputText value="{!unit}"/>                
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Result </apex:outputLabel>
+                <apex:inputText value="{!result}"/>    
+            </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem >
+                    <apex:outputLabel > Your electricity bill is {!result}.
+                    </apex:outputLabel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:commandButton value="Bill" action="{!calculate}"/>
+            </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+       </apex:pageBlock>
+        <apex:pageBlock title="Celsius to Fahrenheit converter">
+            <apex:pageBlockSection columns="1" title="" collapsible="false">          
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Enter the temperature in Celsius </apex:outputLabel>
+                <apex:inputText value="{!celsius}"/>                
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel >Fahrenheit </apex:outputLabel>
+                <apex:inputText value="{!fahrenheit}"/>    
+            </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem >
+                    <apex:outputLabel > Temperature in Fahrenheit is {!fahrenheit}.
+                    </apex:outputLabel>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:commandButton value="Convert" action="{!convert}"/>
+            </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+       </apex:pageBlock>
+    </apex:form>  
+</apex:page>

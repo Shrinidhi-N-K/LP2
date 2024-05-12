@@ -1,0 +1,35 @@
+public class CurrencyConverter {
+    // Exchange rates (as of current rates)
+    private static Decimal USD_TO_EUR_RATE = 0.85; // 1 USD = 0.85 EUR
+    private static Decimal EUR_TO_USD_RATE = 1.18; // 1 EUR = 1.18 USD
+    private static Decimal USD_TO_INR_RATE = 74.5; // 1 USD = 74.5 INR
+    private static Decimal INR_TO_USD_RATE = 0.013; // 1 INR = 0.013 USD
+
+    // Convert from USD to EUR
+    public static Decimal convertUSDToEUR(Decimal usdAmount) {
+        return usdAmount * USD_TO_EUR_RATE;
+    }
+    
+    // Convert from EUR to USD
+    public static Decimal convertEURToUSD(Decimal eurAmount) {
+        return eurAmount / EUR_TO_USD_RATE;
+    }
+    
+    // Convert from USD to INR
+    public static Decimal convertUSDToINR(Decimal usdAmount) {
+        return usdAmount * USD_TO_INR_RATE;
+    }
+    
+    // Convert from INR to USD
+    public static Decimal convertINRToUSD(Decimal inrAmount) {
+        return inrAmount * INR_TO_USD_RATE;
+    }
+}
+
+// Example usage
+Decimal usdAmount = 100.0;
+Decimal eurAmount = CurrencyConverter.convertUSDToEUR(usdAmount);
+System.debug('100 USD is equal to ' + eurAmount + ' EUR');
+
+Decimal inrAmount = CurrencyConverter.convertUSDToINR(usdAmount);
+System.debug('100 USD is equal to ' + inrAmount + ' INR');
